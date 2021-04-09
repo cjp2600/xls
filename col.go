@@ -189,7 +189,7 @@ func (c *NumberCol) String(wb *WorkBook) []string {
 				}
 			}
 			// see http://www.openoffice.org/sc/excelfileformat.pdf Page #174
-		} else if 14 <= fNo && fNo <= 17 || fNo == 22 || 27 <= fNo && fNo <= 36 || 50 <= fNo && fNo <= 58 { // jp. date format
+		} else if 14 <= fNo && fNo <= 17 || fNo == 22 || 27 <= fNo && fNo <= 36 || 50 < fNo && fNo <= 58 { // jp. date format
 			t := timeFromExcelTime(c.Float, wb.dateMode == 1)
 			return []string{t.Format(time.RFC3339)}
 		}
